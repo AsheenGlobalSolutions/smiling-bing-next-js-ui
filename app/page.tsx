@@ -157,6 +157,64 @@ export default function Home() {
         </div>
       </section>
 
+        {/* Service Locations */}
+        <section className="py-16 md:py-24 bg-gradient-to-b from-background to-muted/30">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="text-center mb-12 md:mb-16">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 tracking-tight">
+                        Service Areas
+                    </h2>
+                    <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                        Proudly serving the Greater St. John's area and surrounding communities
+                    </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+                    {[
+                        {
+                            location: "St. John's",
+                            description: "Our home base. Serving all neighborhoods.",
+                        },
+                        {
+                            location: "Mount Pearl",
+                            description: "Quick service to our neighbors west.",
+                        },
+                        {
+                            location: "Paradise",
+                            description: "Extending service to the south.",
+                        },
+                        {
+                            location: "CBS",
+                            description: "Covering communities south of the bay.",
+                        },
+                        {
+                            location: "Torbay",
+                            description: "Reaching north to the Avalon Peninsula.",
+                        },
+                    ].map((area, idx) => (
+                        <div
+                            key={idx}
+                            className="bg-white border border-border rounded-xl p-6 text-center hover:shadow-lg hover:border-primary/30 transition-all duration-300"
+                        >
+                            <h3 className="text-xl font-bold text-foreground mb-2">{area.location}</h3>
+                            <p className="text-sm text-muted-foreground">{area.description}</p>
+                        </div>
+                    ))}
+                </div>
+
+                <div className="mt-12 bg-primary/5 border border-primary/20 rounded-lg p-8 text-center">
+                    <p className="text-muted-foreground mb-4">
+                        Don't see your location listed? We may still service your area!
+                    </p>
+                    <a href="/contact">
+                        <button className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-all">
+                            Check Service Availability
+                            <ArrowRight size={18} />
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </section>
       <Footer />
     </div>
   )

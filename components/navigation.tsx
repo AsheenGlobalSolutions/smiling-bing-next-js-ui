@@ -86,11 +86,35 @@ export default function Navigation() {
                 FAQ & Pricing
               </Button>
             </Link>
-            <Link href="/contact">
-              <Button className="bg-gradient-to-r from-primary to-primary/80 hover:shadow-lg hover:shadow-primary/20 text-primary-foreground ml-4 rounded-lg font-semibold transition-all">
-                Contact Us
-              </Button>
-            </Link>
+              <div className="flex items-center gap-2 ml-4">
+                  {typeof window !== 'undefined' && localStorage.getItem('user') ? (
+                      <>
+                          <Link href="/profile">
+                              <Button variant="ghost" className="text-foreground hover:text-primary hover:bg-primary/5 rounded-lg">
+                                  My Account
+                              </Button>
+                          </Link>
+                          <Link href="/contact">
+                              <Button className="bg-gradient-to-r from-primary to-primary/80 hover:shadow-lg hover:shadow-primary/20 text-primary-foreground rounded-lg font-semibold transition-all">
+                                  Contact Us
+                              </Button>
+                          </Link>
+                      </>
+                  ) : (
+                      <>
+                          <Link href="/signin">
+                              <Button variant="outline" className="border-primary/30 hover:bg-primary/5 text-primary rounded-lg font-semibold bg-transparent">
+                                  Sign In
+                              </Button>
+                          </Link>
+                          <Link href="/signup">
+                              <Button className="bg-gradient-to-r from-primary to-primary/80 hover:shadow-lg hover:shadow-primary/20 text-primary-foreground rounded-lg font-semibold transition-all">
+                                  Sign Up
+                              </Button>
+                          </Link>
+                      </>
+                  )}
+              </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -166,11 +190,18 @@ export default function Navigation() {
             >
               FAQ & Pricing
             </Link>
-            <Link href="/contact" className="block px-4 py-3">
-              <Button className="w-full bg-gradient-to-r from-primary to-primary/80 text-primary-foreground mt-2 rounded-lg font-semibold">
-                Contact Us
-              </Button>
-            </Link>
+              <div className="px-4 py-3 flex gap-2">
+                  <Link href="/signup" className="flex-1">
+                      <Button variant="outline" className="w-full border-primary/30 hover:bg-primary/5 text-primary rounded-lg font-semibold bg-transparent">
+                          Sign Up
+                      </Button>
+                  </Link>
+                  <Link href="/contact" className="flex-1">
+                      <Button className="w-full bg-gradient-to-r from-primary to-primary/80 text-primary-foreground rounded-lg font-semibold">
+                          Contact Us
+                      </Button>
+                  </Link>
+              </div>
           </div>
         )}
       </div>

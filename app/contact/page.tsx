@@ -65,6 +65,45 @@ export default function ContactPage() {
         </div>
       </section>
 
+        {/* Service Area Map */}
+        <section className="py-16 md:py-24 bg-background">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="text-center mb-12">
+                    <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Our Service Area</h2>
+                    <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                        We proudly serve St. John's and the surrounding Newfoundland communities
+                    </p>
+                </div>
+
+                <div className="rounded-2xl overflow-hidden shadow-lg border border-border bg-card">
+                    <iframe
+                        width="100%"
+                        height="500"
+                        style={{ border: 0 }}
+                        loading="lazy"
+                        allowFullScreen
+                        referrerPolicy="no-referrer-when-downgrade"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2825.5917394476547!2d-52.71285!3d47.5603203!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4b59a1c3c3c3c3c3%3A0x0!2sSmiling%20Bins%20-%20Garbage%20Bin%20Cleaning!5e0!3m2!1sen!2sca!4v1234567890"
+                    ></iframe>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mt-12">
+                    {[
+                        { name: "St. John's", status: "Primary Service Area" },
+                        { name: "Mount Pearl", status: "Serving" },
+                        { name: "Paradise", status: "Serving" },
+                        { name: "CBS", status: "Serving" },
+                        { name: "Torbay", status: "Serving" },
+                    ].map((location, idx) => (
+                        <div key={idx} className="bg-white border border-border rounded-lg p-4 text-center hover:border-primary/50 transition-colors">
+                            <h4 className="font-semibold text-foreground mb-1">{location.name}</h4>
+                            <p className="text-sm text-muted-foreground">{location.status}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
       {/* Contact Form */}
       <section className="py-16 md:py-24 bg-muted/30">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
