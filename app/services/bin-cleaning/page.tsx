@@ -54,51 +54,66 @@ export default function BinCleaningPage() {
       </section>
 
       {/* How It Works */}
-      <section className="py-24 bg-slate-50/50">
+      <section className="py-24 bg-slate-50/50 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-secondary/5 rounded-full blur-[100px] -mr-48"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-[100px] -ml-48"></div>
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6">Simple <span className="text-secondary">& Friendly</span> Process</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              A contact-free, hassle-free service designed for busy families.
+          <div className="text-center mb-24">
+            <h2 className="text-4xl md:text-6xl font-black text-foreground mb-6 leading-tight">Simple <span className="text-secondary">& Friendly</span> Process</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto font-body">
+              A contact-free, hassle-free service designed for busy Newfoundland families.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-16 relative">
+            {/* Connecting Line (Desktop) */}
+            <div className="absolute top-1/3 left-0 w-full h-1 bg-gradient-to-r from-transparent via-slate-200 to-transparent hidden md:block"></div>
+
             {[
               {
                 step: "1",
                 title: "Easy Booking",
                 description: "Select your plan online in seconds. No complex contracts or hidden fees.",
-                image: "/contact_hero.png"
+                image: "/service_booking_step.png",
+                color: "bg-primary"
               },
               {
                 step: "2",
                 title: "Curbside Cleaning",
                 description: "Our friendly team arrives after collection day to clean your bins right where they sit.",
-                image: "/step_arrival.png"
+                image: "/step_arrival.png",
+                color: "bg-secondary"
               },
               {
                 step: "3",
                 title: "Sanitized & Fresh",
                 description: "Bins are high-pressure washed and left smelling wonderful. Ready for another week!",
-                image: "/service_bin_cleaning.png"
+                image: "/service_bin_cleaning.png",
+                color: "bg-accent"
               }
             ].map((item, idx) => (
-              <div key={idx} className="group text-center">
-                <div className="relative aspect-square rounded-[3rem] overflow-hidden mb-8 shadow-2xl border-4 border-white group-hover:scale-[1.03] transition-transform duration-700">
+              <div key={idx} className="group relative">
+                <div className="relative aspect-[4/5] rounded-[4rem] overflow-hidden mb-10 shadow-2xl border-8 border-white group-hover:scale-[1.02] transition-all duration-700 bg-white">
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700"
                   />
-                  <div className="absolute top-6 left-6 w-14 h-14 bg-accent rounded-2xl flex items-center justify-center font-black text-2xl text-accent-foreground shadow-xl">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+
+                  {/* Step Number Badge */}
+                  <div className={`absolute top-8 left-8 w-16 h-16 ${item.color} rounded-2xl flex items-center justify-center font-black text-3xl text-white shadow-2xl rotation-[-10deg] group-hover:rotate-0 transition-transform duration-500`}>
                     {item.step}
                   </div>
                 </div>
-                <h3 className="text-2xl font-bold text-foreground mb-4">{item.title}</h3>
-                <p className="text-muted-foreground leading-relaxed text-lg">
-                  {item.description}
-                </p>
+
+                <div className="px-4 text-center">
+                  <h3 className="text-3xl font-black text-foreground mb-4 tracking-tight">{item.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed text-lg font-body">
+                    {item.description}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
