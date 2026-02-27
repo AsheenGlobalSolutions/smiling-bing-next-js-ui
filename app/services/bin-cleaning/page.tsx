@@ -2,7 +2,7 @@ import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { Check, Leaf, Zap } from "lucide-react"
+import { Check, Leaf, Zap, Sparkles } from "lucide-react"
 
 export default function BinCleaningPage() {
   return (
@@ -10,191 +10,203 @@ export default function BinCleaningPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">Garbage Bin Cleaning</h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mb-8">
-            Whether it's garbage, recycling, or compost, we make it shine. Professional high-pressure cleaning with
-            complete deodorization at your curb.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Link href="/contact">
-              <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground px-8">
-                Book Your Bin Cleaning Today
-              </Button>
-            </Link>
-            <Link href="/faq-pricing">
-              <Button size="lg" variant="outline" className="border-2 px-8 bg-transparent">
-                See Pricing & Plans
-              </Button>
-            </Link>
+      <section className="relative py-20 md:py-32 overflow-hidden bg-white">
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-primary/5 rounded-l-[10rem] blur-3xl"></div>
+        <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-secondary/5 rounded-full blur-3xl"></div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="max-w-3xl">
+              <div className="inline-flex items-center gap-2 bg-secondary/20 border border-secondary/50 rounded-full px-5 py-2 mb-8 shadow-sm">
+                <Leaf size={16} className="text-secondary" />
+                <span className="text-sm font-bold text-secondary uppercase tracking-widest">
+                  Sparkling & Odor-Free
+                </span>
+              </div>
+              <h1 className="text-5xl md:text-7xl font-bold mb-8 tracking-tight text-foreground leading-[1.1]">
+                Bin <span className="text-primary font-black">Cleaning</span>
+              </h1>
+              <p className="text-xl text-muted-foreground mb-10 leading-relaxed max-w-2xl font-body">
+                Whether it&apos;s garbage, recycling, or compost, we make it shine. Experience professional high-pressure
+                cleaning with eco-friendly deodorization at your curb.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-5">
+                <Link href="/contact">
+                  <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-10 h-16 rounded-2xl font-bold text-lg shadow-xl shadow-primary/20 transition-all hover:-translate-y-1 active:scale-95">
+                    Book Your Service
+                  </Button>
+                </Link>
+                <Link href="/faq-pricing">
+                  <Button size="lg" variant="outline" className="border-2 px-10 border-secondary text-secondary hover:bg-secondary/5 h-16 rounded-2xl font-bold text-lg transition-all">
+                    See Pricing
+                  </Button>
+                </Link>
+              </div>
+            </div>
+            <div className="relative group">
+              <div className="absolute -inset-4 bg-primary/10 rounded-[4rem] blur-2xl opacity-50 group-hover:opacity-100 transition duration-1000"></div>
+              <div className="relative rounded-[4rem] overflow-hidden shadow-2xl border-8 border-white bg-slate-100">
+                <img src="/service_bin_cleaning.png" alt="Bin Cleaning Service" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* How It Works */}
-      <section className="py-16 md:py-24 bg-background">
+      <section className="py-24 bg-slate-50/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-12">How It Works</h2>
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6">Simple <span className="text-secondary">& Friendly</span> Process</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              A contact-free, hassle-free service designed for busy families.
+            </p>
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-3xl font-bold text-accent">1</span>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            {[
+              {
+                step: "1",
+                title: "Easy Booking",
+                description: "Select your plan online in seconds. No complex contracts or hidden fees.",
+                image: "/contact_hero.png"
+              },
+              {
+                step: "2",
+                title: "Curbside Cleaning",
+                description: "Our friendly team arrives after collection day to clean your bins right where they sit.",
+                image: "/step_arrival.png"
+              },
+              {
+                step: "3",
+                title: "Sanitized & Fresh",
+                description: "Bins are high-pressure washed and left smelling wonderful. Ready for another week!",
+                image: "/service_bin_cleaning.png"
+              }
+            ].map((item, idx) => (
+              <div key={idx} className="group text-center">
+                <div className="relative aspect-square rounded-[3rem] overflow-hidden mb-8 shadow-2xl border-4 border-white group-hover:scale-[1.03] transition-transform duration-700">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute top-6 left-6 w-14 h-14 bg-accent rounded-2xl flex items-center justify-center font-black text-2xl text-accent-foreground shadow-xl">
+                    {item.step}
+                  </div>
+                </div>
+                <h3 className="text-2xl font-bold text-foreground mb-4">{item.title}</h3>
+                <p className="text-muted-foreground leading-relaxed text-lg">
+                  {item.description}
+                </p>
               </div>
-              <h3 className="text-xl font-semibold text-foreground mb-3">You Book Online</h3>
-              <p className="text-muted-foreground">
-                Select your plan and schedule via phone or computer. Choose your preferred date and time.
-              </p>
-            </div>
-
-            <div className="text-center">
-              <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-3xl font-bold text-accent">2</span>
-              </div>
-              <h3 className="text-xl font-semibold text-foreground mb-3">We Arrive After Garbage Day</h3>
-              <p className="text-muted-foreground">
-                Our truck arrives curbside after your bins are emptied to clean them while they're ready.
-              </p>
-            </div>
-
-            <div className="text-center">
-              <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-3xl font-bold text-accent">3</span>
-              </div>
-              <h3 className="text-xl font-semibold text-foreground mb-3">Your Bins Shine Again</h3>
-              <p className="text-muted-foreground">
-                Bins are pressure washed, deodorized, and left germ-free. Ready for your next collection!
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Benefits */}
-      <section className="py-16 md:py-24 bg-muted/30">
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12">Why Our Bin Cleaning Service?</h2>
+          <div className="flex flex-col md:flex-row items-center justify-between mb-20 gap-8">
+            <div className="max-w-2xl">
+              <h2 className="text-4xl md:text-5xl font-black text-foreground mb-6">Why Smiling Bins?</h2>
+              <p className="text-xl text-muted-foreground leading-relaxed">
+                We believe cleaning should be easy, effective, and environmentally responsible.
+              </p>
+            </div>
+            <div className="flex-shrink-0">
+              <Button className="bg-primary/10 text-primary border-2 border-primary/20 hover:bg-primary/20 px-8 h-14 rounded-2xl font-bold">
+                Learn About Our Eco-Commitment
+              </Button>
+            </div>
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="flex gap-4">
-              <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-accent/10">
-                  <Leaf className="h-6 w-6 text-accent" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            {[
+              { icon: Leaf, color: "text-primary", bg: "bg-primary/10", title: "Eco-Friendly Products", desc: "We use only biodegradable cleaning solutions that protect your pipes and the Newfoundland environment." },
+              { icon: Zap, color: "text-secondary", bg: "bg-secondary/10", title: "Commercial Power", desc: "Our high-pressure washing systems remove 99.9% of bacteria, grime, and stubborn residues." },
+              { icon: Check, color: "text-accent", bg: "bg-accent/10", title: "Odor Neutralization", desc: "We don't just mask smells—we eliminate them at the source with hospital-grade sanitizers." },
+              { icon: Sparkles, color: "text-primary", bg: "bg-primary/10", title: "Local & Friendly", desc: "Proudly owned and operated in NL. Our team is dedicated to making your home life better." },
+            ].map((benefit, i) => (
+              <div key={i} className="flex gap-6 p-8 bg-slate-50 rounded-[2.5rem] border border-transparent hover:border-border transition-all group">
+                <div className={`flex-shrink-0 w-16 h-16 rounded-2xl ${benefit.bg} flex items-center justify-center group-hover:scale-110 transition-transform`}>
+                  <benefit.icon className={`h-8 w-8 ${benefit.color}`} />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-foreground mb-3">{benefit.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {benefit.desc}
+                  </p>
                 </div>
               </div>
-              <div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">Eco-Friendly Products</h3>
-                <p className="text-muted-foreground">
-                  We use only environmentally safe, biodegradable cleaning solutions that are gentle on your bins and
-                  the Newfoundland environment.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex gap-4">
-              <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-accent/10">
-                  <Zap className="h-6 w-6 text-accent" />
-                </div>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">High-Pressure Wash</h3>
-                <p className="text-muted-foreground">
-                  Our commercial-grade pressure washing removes all dirt, grime, and bacteria, leaving your bins
-                  hygienically clean.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex gap-4">
-              <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-accent/10">
-                  <Check className="h-6 w-6 text-accent" />
-                </div>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">Complete Odor Removal</h3>
-                <p className="text-muted-foreground">
-                  Say goodbye to unpleasant smells. Our specialized treatment eliminates odors at the source, keeping
-                  your area fresh.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex gap-4">
-              <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-accent/10">
-                  <Check className="h-6 w-6 text-accent" />
-                </div>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">Residential & Commercial</h3>
-                <p className="text-muted-foreground">
-                  Whether you need a single bin cleaned or multiple commercial units, we have the capacity and expertise
-                  to serve you.
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Service Options */}
-      <section className="py-16 md:py-24 bg-muted/30">
+      <section className="py-24 bg-slate-50/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12">Service Options</h2>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground">Service Plans</h2>
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="p-8 rounded-2xl bg-white border border-border/40 shadow-sm">
-              <h3 className="text-2xl font-bold text-foreground mb-4">Residential Service</h3>
-              <p className="text-muted-foreground mb-6">
-                One-time or scheduled options. High-pressure wash, deodorized, and left spotless at your curb.
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+            <div className="p-10 rounded-[3rem] bg-white border-2 border-primary/10 shadow-xl relative overflow-hidden group">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-[5rem]"></div>
+              <h3 className="text-3xl font-black text-primary mb-6">Residential</h3>
+              <p className="text-lg text-muted-foreground mb-8">
+                Perfect for busy families. One-time or scheduled cleans at your curb.
               </p>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-primary" /> Monthly or one-time cleaning
-                </li>
-                <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-primary" /> All bin types (garbage, recycling, compost)
-                </li>
-                <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-primary" /> Eco-friendly biodegradable products
-                </li>
+              <ul className="space-y-4 mb-10">
+                {["Monthly or One-Time", "All bin types included", "Eco-safe products"].map((li, i) => (
+                  <li key={i} className="flex items-center gap-3 font-bold text-foreground">
+                    <div className="w-6 h-6 bg-primary/20 rounded-full flex items-center justify-center">
+                      <Check className="w-3.5 h-3.5 text-primary" />
+                    </div>
+                    {li}
+                  </li>
+                ))}
               </ul>
+              <Button className="w-full h-14 bg-primary rounded-2xl font-bold text-lg shadow-lg shadow-primary/20">Get Started</Button>
             </div>
 
-            <div className="p-8 rounded-2xl bg-white border border-border/40 shadow-sm">
-              <h3 className="text-2xl font-bold text-foreground mb-4">Commercial Service</h3>
-              <p className="text-muted-foreground mb-6">
-                Ideal for restaurants, apartments, and offices. Flexible scheduling and volume discounts.
+            <div className="p-10 rounded-[3rem] bg-white border-2 border-secondary/10 shadow-xl relative overflow-hidden group">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/5 rounded-bl-[5rem]"></div>
+              <h3 className="text-3xl font-black text-secondary mb-6">Commercial</h3>
+              <p className="text-lg text-muted-foreground mb-8">
+                Ideal for restaurants, apartments, and shopping centers.
               </p>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-primary" /> Flexible scheduling options
-                </li>
-                <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-primary" /> Volume discounts available
-                </li>
-                <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-primary" /> Professional-grade equipment
-                </li>
+              <ul className="space-y-4 mb-10">
+                {["Flexible volume scheduling", "Bulk discounts", "Professional equipment"].map((li, i) => (
+                  <li key={i} className="flex items-center gap-3 font-bold text-foreground">
+                    <div className="w-6 h-6 bg-secondary/20 rounded-full flex items-center justify-center">
+                      <Check className="w-3.5 h-3.5 text-secondary" />
+                    </div>
+                    {li}
+                  </li>
+                ))}
               </ul>
+              <Button className="w-full h-14 bg-secondary rounded-2xl font-bold text-lg shadow-lg shadow-secondary/20">Contact for Quote</Button>
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-primary text-primary-foreground">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready for Fresh, Clean Bins?</h2>
-          <p className="text-lg opacity-90 mb-8 max-w-2xl mx-auto">
-            Schedule your bin cleaning today and experience the Smiling Bins difference.
+      <section className="py-24 bg-primary relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full -mr-48 -mt-48 blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-accent/20 rounded-full -ml-32 -mb-32 blur-2xl"></div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-primary-foreground">
+          <h2 className="text-4xl md:text-6xl font-black mb-8 leading-tight">Ready for <span className="text-accent underline decoration-sky-300">Fresh</span> Bins?</h2>
+          <p className="text-xl opacity-90 mb-12 max-w-2xl mx-auto font-medium">
+            Join the hundreds of happy Newfoundland families who enjoy a cleaner home life with Smiling Bins.
           </p>
           <Link href="/contact">
-            <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground px-8">
-              Book Your Service Today
+            <Button size="lg" className="bg-white text-primary hover:bg-slate-100 px-12 h-16 rounded-[2rem] font-black text-xl shadow-2xl">
+              Book Your Service Now
             </Button>
           </Link>
         </div>

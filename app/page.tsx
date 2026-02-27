@@ -9,145 +9,191 @@ export default function Home() {
     <div className="min-h-screen flex flex-col bg-background">
       <Navigation />
 
-      <section className="relative py-16 md:py-32 lg:py-40 bg-gradient-to-br from-primary/8 via-background to-secondary/8 overflow-hidden">
-        {/* Decorative elements */}
-        <div className="absolute top-20 right-10 w-72 h-72 bg-secondary/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 left-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+      <section className="relative py-24 md:py-36 lg:py-48 bg-white overflow-hidden">
+        {/* Lighter, friendlier background elements */}
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-secondary/5 rounded-l-[10rem] blur-3xl"></div>
+        <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 bg-accent/10 border border-accent/30 rounded-full px-4 py-2 mb-6 md:mb-8">
-            <Sparkles size={16} className="text-accent" />
-            <span className="text-sm font-medium text-accent">Trusted by Newfoundland residents</span>
-          </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            {/* LEFT SIDE - CONTENT */}
+            <div className="lg:col-span-7">
+              <div className="inline-flex items-center gap-2 bg-accent/20 border border-accent/50 rounded-full px-5 py-2.5 mb-8 shadow-sm">
+                <Sparkles size={18} className="text-accent-foreground" />
+                <span className="text-sm font-bold text-accent-foreground uppercase tracking-wider">
+                  Trusted by Newfoundland families
+                </span>
+              </div>
 
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 md:mb-8 leading-tight tracking-tight">
-            Smiling Bins
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
-              Because Clean Bins Make Happy Homes!
-            </span>
-          </h1>
+              <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-foreground mb-8 leading-[1.1] tracking-tight">
+                <span className="text-primary">Smiling Bins</span>
+                <span className="block mt-4 text-4xl sm:text-5xl md:text-6xl text-muted-foreground font-medium">
+                  Because Clean Bins Make Happy Homes!
+                </span>
+              </h1>
 
-          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto mb-8 md:mb-12 leading-relaxed">
-            Bringing freshness back to your garbage, recycling, and compost bins—one clean at a time. We make them look
-            and smell brand new the eco-friendly way.
-          </p>
+              <p className="text-xl text-muted-foreground mb-10 leading-relaxed max-w-2xl">
+                We bring freshness back to your garbage, recycling, and compost bins—one eco-friendly clean at a time.
+                Experience a sparkling, odor-free home with Newfoundland's friendliest cleaning team.
+              </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Link href="/contact" className="w-full sm:w-auto">
-              <Button
-                size="lg"
-                className="w-full bg-gradient-to-r from-primary to-primary/80 hover:shadow-lg hover:shadow-primary/20 text-primary-foreground px-8 h-12 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-200"
-              >
-                Book a Service
-                <ArrowRight size={18} />
-              </Button>
-            </Link>
-            <Link href="/services/bin-cleaning" className="w-full sm:w-auto">
-              <Button
-                size="lg"
-                variant="outline"
-                className="w-full border-2 border-primary/20 hover:border-primary/50 hover:bg-primary/5 px-8 h-12 rounded-lg font-semibold bg-transparent"
-              >
-                Explore Services
-              </Button>
-            </Link>
-          </div>
+              <div className="flex flex-col sm:flex-row gap-5">
+                <Link href="/contact">
+                  <Button
+                    size="lg"
+                    className="bg-primary hover:bg-primary/90 text-primary-foreground px-10 h-16 rounded-2xl font-bold text-lg shadow-xl shadow-primary/20 transition-all hover:-translate-y-1 active:scale-95 flex items-center gap-3"
+                  >
+                    Book Your Service
+                    <ArrowRight size={22} />
+                  </Button>
+                </Link>
 
-          {/* Trust indicators */}
-          <div className="grid grid-cols-1 sm:grid-cols-4 gap-6 max-w-4xl mx-auto">
-            <div className="flex flex-col items-center gap-2">
-              <CheckCircle className="w-6 h-6 text-primary" />
-              <span className="text-sm font-medium text-foreground">Eco-Friendly</span>
+                <Link href="/services/bin-cleaning">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="border-2 border-secondary/30 text-secondary hover:bg-secondary/10 px-10 h-16 rounded-2xl font-bold text-lg"
+                  >
+                    Explore Services
+                  </Button>
+                </Link>
+              </div>
             </div>
-            <div className="flex flex-col items-center gap-2">
-              <CheckCircle className="w-6 h-6 text-secondary" />
-              <span className="text-sm font-medium text-foreground">Convenient Curbside</span>
-            </div>
-            <div className="flex flex-col items-center gap-2">
-              <CheckCircle className="w-6 h-6 text-accent" />
-              <span className="text-sm font-medium text-foreground">Sanitized & Deodorized</span>
-            </div>
-            <div className="flex flex-col items-center gap-2">
-              <CheckCircle className="w-6 h-6 text-primary" />
-              <span className="text-sm font-medium text-foreground">Locally Owned</span>
+
+            {/* RIGHT SIDE - IMAGE */}
+            <div className="lg:col-span-5 relative group">
+              <div className="absolute -inset-4 bg-primary/5 rounded-[3rem] blur-2xl group-hover:bg-primary/10 transition-colors duration-500"></div>
+              <div className="relative rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white group-hover:scale-[1.03] transition-transform duration-700">
+                <img
+                  src="/hero_smiling_bins.png"
+                  alt="Happy Home with Clean Bins"
+                  className="w-full h-auto"
+                />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-16 md:py-24 lg:py-32 bg-background">
+
+      <section className="py-12 bg-muted/30">
+        <div className="grid grid-cols-1 sm:grid-cols-4 gap-8 max-w-6xl mx-auto px-4">
+          <div className="flex flex-col items-center gap-3 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+              <CheckCircle className="w-6 h-6 text-primary" />
+            </div>
+            <span className="text-sm font-bold text-foreground">Eco-Friendly</span>
+          </div>
+          <div className="flex flex-col items-center gap-3 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center">
+              <CheckCircle className="w-6 h-6 text-secondary" />
+            </div>
+            <span className="text-sm font-bold text-foreground">Convenient Curbside</span>
+          </div>
+          <div className="flex flex-col items-center gap-3 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center">
+              <CheckCircle className="w-6 h-6 text-accent" />
+            </div>
+            <span className="text-sm font-bold text-foreground">Sanitized & Deodorized</span>
+          </div>
+          <div className="flex flex-col items-center gap-3 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+              <CheckCircle className="w-6 h-6 text-primary" />
+            </div>
+            <span className="text-sm font-bold text-foreground">Locally Owned</span>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 md:py-32 bg-slate-50/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 tracking-tight">
-              Our Premium Services
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6 tracking-tight">
+              Our <span className="text-primary font-black">Fresh</span> Services
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive cleaning solutions tailored to your specific needs and budget
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              Safe, eco-friendly, and professional cleaning solutions for your home and business.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {[
               {
                 href: "/services/bin-cleaning",
-                icon: "🗑️",
+                image: "/service_bin_cleaning.png",
                 title: "Garbage Bin Cleaning",
-                description: "Residential & Commercial - High-pressure wash with deodorization at your curb",
-                gradient: "from-primary/10 to-transparent",
+                description: "Residential & Commercial - High-pressure wash with deodorization at your curb.",
+                tag: "Bestseller",
+                tagColor: "bg-primary"
               },
               {
                 href: "/services/pressure-washing",
-                icon: "💧",
+                image: "/service_pressure_washing.png",
                 title: "Pressure Washing",
-                description: "Restore driveways, patios, decks, and house exteriors to like-new condition",
-                gradient: "from-secondary/10 to-transparent",
+                description: "Restore driveways, patios, decks, and house exteriors to like-new condition.",
+                tag: "New",
+                tagColor: "bg-secondary"
               },
               {
                 href: "/services/residential-carpet",
-                icon: "🏠",
-                title: "Residential Carpet Cleaning",
-                description: "Deep steam extraction with stain & pet odor removal - Safe for kids & pets",
-                gradient: "from-accent/10 to-transparent",
+                image: "/service_carpet_residential.png",
+                title: "Residential Carpet",
+                description: "Deep steam extraction with stain & pet odor removal - Safe for kids & pets.",
+                tag: "Eco-Safe",
+                tagColor: "bg-primary"
               },
               {
                 href: "/services/commercial-carpet",
-                icon: "🏢",
-                title: "Commercial Carpet Cleaning",
-                description: "Heavy-duty cleaning for offices, retail, clinics, schools - Quote-based pricing",
-                gradient: "from-primary/10 to-transparent",
+                image: "/service_carpet_commercial.png",
+                title: "Commercial Carpet",
+                description: "Heavy-duty cleaning for offices, retail, clinics, schools - Quote-based pricing.",
+                tag: "Pro",
+                tagColor: "bg-secondary"
               },
               {
                 href: "/services/upholstery",
-                icon: "🪑",
-                title: "Professional Upholstery Cleaning",
-                description: "Specialized fabric cleaning for sofas, chairs, mattresses & sectionals",
-                gradient: "from-secondary/10 to-transparent",
+                image: "/service_upholstery.png",
+                title: "Upholstery Cleaning",
+                description: "Specialized fabric cleaning for sofas, chairs, mattresses & sectionals.",
+                tag: "Fresh",
+                tagColor: "bg-accent"
               },
               {
                 href: "/faq-pricing",
-                icon: "📋",
+                image: "/hero_smiling_bins.png",
                 title: "Pricing & FAQ",
                 description: "Simple pricing, no contracts, no hidden fees. Satisfaction guaranteed.",
-                gradient: "from-accent/10 to-transparent",
+                tag: "Transparent",
+                tagColor: "bg-accent"
               },
             ].map((service) => (
               <Link key={service.title} href={service.href}>
                 <div
-                  className={`group relative h-full p-8 rounded-2xl bg-gradient-to-br ${service.gradient} border border-border hover:border-primary/30 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer overflow-hidden`}
+                  className="group h-full rounded-[2rem] bg-white border-2 border-transparent hover:border-primary/20 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 overflow-hidden"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
-                  <div className="relative z-10">
-                    <div className="w-14 h-14 bg-white/80 backdrop-blur rounded-xl flex items-center justify-center mb-5 text-2xl group-hover:scale-110 transition-transform duration-300">
-                      {service.icon}
+                  <div className="relative h-60 overflow-hidden">
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    <div className="absolute top-6 left-6">
+                      <span className={`${service.tagColor} text-white text-[10px] font-black uppercase tracking-[0.2em] px-4 py-1.5 rounded-full shadow-lg`}>
+                        {service.tag}
+                      </span>
                     </div>
-                    <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+                  </div>
+
+                  <div className="p-8">
+                    <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
                       {service.title}
                     </h3>
-                    <p className="text-muted-foreground mb-5 text-sm leading-relaxed">{service.description}</p>
-                    <div className="flex items-center gap-2 text-primary font-semibold text-sm group-hover:gap-3 transition-all">
-                      Learn more
-                      <ArrowRight size={16} />
+                    <p className="text-muted-foreground mb-6 leading-relaxed">
+                      {service.description}
+                    </p>
+                    <div className="inline-flex items-center gap-2 text-primary font-black text-sm uppercase tracking-widest group-hover:gap-4 transition-all pb-1 border-b-2 border-primary/10 group-hover:border-primary/50">
+                      Learn More
+                      <ArrowRight size={18} />
                     </div>
                   </div>
                 </div>
@@ -157,64 +203,83 @@ export default function Home() {
         </div>
       </section>
 
-        {/* Service Locations */}
-        <section className="py-16 md:py-24 bg-gradient-to-b from-background to-muted/30">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-12 md:mb-16">
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 tracking-tight">
-                        Service Areas
-                    </h2>
-                    <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                        Proudly serving the Greater St. John's area and surrounding communities
-                    </p>
-                </div>
+      <section className="py-24 md:py-32 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6">Where We <span className="text-secondary">Shine</span></h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Proudly serving families and businesses across the Avalon Peninsula.
+            </p>
+          </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-                    {[
-                        {
-                            location: "St. John's",
-                            description: "Our home base. Serving all neighborhoods.",
-                        },
-                        {
-                            location: "Mount Pearl",
-                            description: "Quick service to our neighbors west.",
-                        },
-                        {
-                            location: "Paradise",
-                            description: "Extending service to the south.",
-                        },
-                        {
-                            location: "CBS",
-                            description: "Covering communities south of the bay.",
-                        },
-                        {
-                            location: "Torbay",
-                            description: "Reaching north to the Avalon Peninsula.",
-                        },
-                    ].map((area, idx) => (
-                        <div
-                            key={idx}
-                            className="bg-white border border-border rounded-xl p-6 text-center hover:shadow-lg hover:border-primary/30 transition-all duration-300"
-                        >
-                            <h3 className="text-xl font-bold text-foreground mb-2">{area.location}</h3>
-                            <p className="text-sm text-muted-foreground">{area.description}</p>
-                        </div>
-                    ))}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            {/* Location Grid (Friendly list) */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {[
+                "St. John's", "Mount Pearl", "Paradise",
+                "Conception Bay South", "Torbay", "Portugal Cove"
+              ].map((area, idx) => (
+                <div
+                  key={idx}
+                  className="flex items-center gap-5 p-6 bg-slate-50 rounded-[2rem] border border-transparent hover:border-primary/30 transition-all duration-300 hover:shadow-xl group"
+                >
+                  <div className="w-14 h-14 bg-white rounded-2xl flex-shrink-0 flex items-center justify-center shadow-sm group-hover:bg-primary transition-colors">
+                    <Sparkles className="w-6 h-6 text-primary group-hover:text-white" />
+                  </div>
+                  <span className="text-lg font-bold text-foreground">
+                    {area}
+                  </span>
                 </div>
-
-                <div className="mt-12 bg-primary/5 border border-primary/20 rounded-lg p-8 text-center">
-                    <p className="text-muted-foreground mb-4">
-                        Don't see your location listed? We may still service your area!
-                    </p>
-                    <a href="/contact">
-                        <button className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-all">
-                            Check Service Availability
-                            <ArrowRight size={18} />
-                        </button>
-                    </a>
-                </div>
+              ))}
             </div>
-        </section>
+
+            {/* Visual illustrative Section instead of topo map */}
+            <div className="relative">
+              <div className="absolute -inset-10 bg-secondary/5 rounded-full blur-3xl"></div>
+              <div className="relative aspect-square bg-slate-50 rounded-[3rem] border-8 border-white shadow-2xl overflow-hidden flex flex-col items-center justify-center p-12 text-center">
+                <div className="w-32 h-32 bg-secondary/10 rounded-full flex items-center justify-center mb-8 animate-bounce transition-all duration-1000">
+                  <div className="w-16 h-16 bg-secondary/30 rounded-full flex items-center justify-center">
+                    <div className="w-8 h-8 bg-secondary rounded-full flex items-center justify-center">
+                      <Sparkles className="text-white w-4 h-4" />
+                    </div>
+                  </div>
+                </div>
+                <h3 className="text-3xl font-black text-foreground mb-4 font-sans tracking-tight leading-none uppercase">
+                  Greater St. John&apos;s Coverage
+                </h3>
+                <p className="text-muted-foreground text-lg mb-8 leading-relaxed font-body">
+                  We bring our specialized cleaning trucks directly to your curb in these areas.
+                </p>
+                <div className="flex flex-wrap justify-center gap-3">
+                  {["Metro", "Urban", "Suburban", "Northeast", "West Coast"].map(tag => (
+                    <span key={tag} className="px-4 py-2 bg-white border border-border rounded-full text-xs font-bold text-muted-foreground uppercase tracking-wider">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-16 bg-white border border-border rounded-3xl p-10 text-center shadow-lg relative overflow-hidden group">
+            <div className="absolute top-0 left-0 w-2 h-full bg-primary"></div>
+            <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+              <div className="text-left">
+                <h3 className="text-2xl font-bold mb-2">Don&apos;t see your location?</h3>
+                <p className="text-muted-foreground">
+                  We are rapidly expanding. Contact us to check if we can service your specific address!
+                </p>
+              </div>
+              <a href="/contact">
+                <button className="whitespace-nowrap inline-flex items-center gap-2 bg-secondary text-secondary-foreground px-8 py-4 rounded-2xl font-bold hover:bg-secondary/90 transition-all shadow-lg shadow-secondary/20 hover:scale-105 active:scale-95">
+                  Check Availability
+                  <ArrowRight size={20} />
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
       <Footer />
     </div>
   )

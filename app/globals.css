@@ -4,48 +4,48 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Enhanced color palette with more sophisticated greens and blues */
-  --primary: #2d7a4a;
+  /* Fresh & Eco-Friendly Palette */
+  --primary: #4CAF50; /* Fresh Green */
   --primary-foreground: #ffffff;
 
-  --secondary: #2a90b8;
+  --secondary: #4FC3F7; /* Sky Blue */
   --secondary-foreground: #ffffff;
 
-  /* Updated accent with better contrast */
-  --accent: #f0a500;
-  --accent-foreground: #ffffff;
+  /* Friendly Yellow Accent */
+  --accent: #FDD835;
+  --accent-foreground: #333333;
 
-  /* Improved neutral palette for better visual hierarchy */
-  --background: #f8fafc;
-  --foreground: #1f2937;
+  /* Airy & Clean Backgrounds */
+  --background: #ffffff;
+  --foreground: #333333;
   --card: #ffffff;
-  --card-foreground: #1f2937;
+  --card-foreground: #333333;
   --popover: #ffffff;
-  --popover-foreground: #1f2937;
+  --popover-foreground: #333333;
 
-  --muted: #e2e8f0;
-  --muted-foreground: #6b7280;
-  --border: #cbd5e1;
-  --input: #f1f5f9;
-  --ring: #2d7a4a;
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+  --border: #e2e8f0;
+  --input: #f8fafc;
+  --ring: #4CAF50;
 
-  --chart-1: #2d7a4a;
-  --chart-2: #2a90b8;
-  --chart-3: #f0a500;
-  --chart-4: #2d7a4a;
-  --chart-5: #2a90b8;
+  --chart-1: #4CAF50;
+  --chart-2: #4FC3F7;
+  --chart-3: #FDD835;
+  --chart-4: #8BC34A;
+  --chart-5: #03A9F4;
 
-  --radius: 0.75rem;
+  --radius: 1rem; /* More rounded for friendly feel */
   --sidebar: #ffffff;
-  --sidebar-foreground: #1f2937;
-  --sidebar-primary: #2d7a4a;
+  --sidebar-foreground: #333333;
+  --sidebar-primary: #4CAF50;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #f0a500;
-  --sidebar-accent-foreground: #ffffff;
-  --sidebar-border: #cbd5e1;
-  --sidebar-ring: #2d7a4a;
+  --sidebar-accent: #FDD835;
+  --sidebar-accent-foreground: #333333;
+  --sidebar-border: #e2e8f0;
+  --sidebar-ring: #4CAF50;
 
-  --destructive: #ef4444;
+  --destructive: #ff5252;
   --destructive-foreground: #ffffff;
 }
 
